@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  root 'movies#index'
   resources :movies, only: [:index] do
     get 'search', on: :collection, as: :search
   end
