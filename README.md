@@ -1,6 +1,6 @@
 Here's the formatted README:
 
-# Movie Search App
+# Movie Reviews App
 
 ## Overview
 This is a Ruby on Rails application that allows users to search for movies by actor's first name or full name. The movies are displayed in order of their average star rating.
