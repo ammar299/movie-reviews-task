@@ -1,0 +1,51 @@
+<h1>All Movies</h1>
+<%= form_tag search_movies_path, method: :get do %>
+  <%= label_tag :actor %>
+  <%= text_field_tag :actor %>
+  <%= submit_tag "Search" %>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Year</th>
+      <th>Director</th>
+      <th>Actors</th>
+      <th>Filming Locations</th>
+      <th>Country</th>
+      <th>Average Rating</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @movies.each do |movie| %>
+      <tr>
+        <td><%= movie.title %></td>
+        <td><%= movie.description %></td>
+        <td><%= movie.year %></td>
+        <td>
+          <% movie.director.each do |dir| %>
+            <%= dir %><br>
+          <% end %>
+        </td>
+        <td>
+          <% movie.actors.each do |actor| %>
+            <%= actor %><br>
+          <% end %>
+        </td>
+        <td>
+          <% movie.filming_locations.each do |location| %>
+            <%= location %><br>
+          <% end %>
+        </td>
+        <td>
+          <% movie.country.each do |c| %>
+            <%= c %><br>
+          <% end %>
+        </td>
+        <td><%= movie.average_rating %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
